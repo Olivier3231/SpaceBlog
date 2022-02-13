@@ -23,15 +23,22 @@ class FrontController extends AbstractController
     public function index(): Response
     {
         return $this->render('front/index.html.twig', [
-            'article' => $this->articleRepository->findAll(),
+            'articles' => $this->articleRepository->findAll(),
         ]);
     }
 
     /**
-     * @Route("/article/{id}-{slug}", name="show_article")
+     * @Route("/article/{id}-{slug}", name="show_article", requirements={"id"="\d+"})
      */
-    public function showArticle(Article $article): Response
+    public function showArticle(ArticleRepository $articleRepository, $slug, $id): Response
     {
+        $article = $articleRepository->find($id);
+        if($article->getSlug() !== $slug) {
+        return $this->redirectToRoute('show_article', [
+            'id' => $id,
+            'slug' => $article->getSlug()
+        ]);
+        }
         return $this->render('front/show_article.html.twig', [
             'article' => $article,
         ]);

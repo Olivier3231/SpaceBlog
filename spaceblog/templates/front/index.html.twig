@@ -6,14 +6,24 @@
 
 
 <div class="container">
-    <h1>Home</h1>
-    {{dump(article)}}
-
-    This friendly message is coming from:
-
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/olivier/TestStage/spaceblog/src/Controller/FrontController.php'|file_link(0) }}">src/Controller/FrontController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/olivier/TestStage/spaceblog/templates/front/index.html.twig'|file_link(0) }}">templates/front/index.html.twig</a></code></li>
-    </ul>
+    <h1>SpaceBlog</h1>
+    <div class="container">
+    <div class="row">
+        {% for article in articles %}
+        <div class="col-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{ article.cover }}" class="card-img-top" alt="{{article.title}} illustration">
+                <div class="card-body">
+                    <h5 class="card-title">{{article.title}}</h5>
+                    <a href="{{path('show_article', {'slug': article.slug, 'id': article.id})}}" class="btn btn-primary">Read more</a>
+                </div>
+                <div class="card-footer">
+                    <small>{{article.createdAt|date('y-m-d')}}</small>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 </div>
 {% endblock %}
