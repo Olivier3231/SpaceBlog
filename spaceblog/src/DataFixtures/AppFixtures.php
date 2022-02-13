@@ -25,7 +25,7 @@ class AppFixtures extends Fixture
             $article = new Article();
             $article->setTitle($faker->sentence(3))
             ->setSlug($this->slugger->generate($article->getTitle()))
-            ->setContent($faker->paragraph(1))
+            ->setContent($faker->paragraph(4))
             ->setCover('https://picsum.photos/500/300')
             ->setCreatedAt($faker->datetime());
 
