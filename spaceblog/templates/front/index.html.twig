@@ -6,24 +6,23 @@
 
 
 <div class="container">
-    <h1>SpaceBlog</h1>
+    
     <div class="container">
-    <div class="row">
-        {% for article in articles %}
-        <div class="col-3">
-            <div class="card" style="width: 18rem;">
-                <img src="{{ article.cover }}" class="card-img-top" alt="{{article.title}} illustration">
-                <div class="card-body">
-                    <h5 class="card-title">{{article.title}}</h5>
-                    <a href="{{path('show_article', {'slug': article.slug, 'id': article.id})}}" class="btn btn-primary">Read more</a>
+    <h2>Nos articles</h2>
+        <div class="row">
+            {% for article in articles %}
+            <div class="col-4 p-1">
+            <a style="text-decoration:none" href="{{path('show_article', {'slug': article.slug, 'id': article.id})}}">
+                <div class="card1">
+                    <img src="{{ article.cover }}" class="card-img-top1" alt="{{article.title}} illustration">
+                    <div class="card-body">
+                        <h5 class="card-title1">{{article.title}}</h5>
+                    </div>
                 </div>
-                <div class="card-footer">
-                    <small>{{article.createdAt|date('y-m-d')}}</small>
-                </div>
+            </a>   
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
 </div>
 {% endblock %}
