@@ -1,6 +1,28 @@
 body {
     background-color: #e4e6ec;
 }
+
+.row {
+    align-items: flex-start;
+}
+.logonav{
+    width: 60px;
+    height: 52px;
+    background-color: #dc5e44;
+}
+.carousel-caption {
+    position:absolute;
+    width: 1280px;
+    height: 420px;
+    border-radius: 30px;
+    top:120px;
+    left: auto;
+    font-size: 56px;
+    line-height: 35px;
+    color: #ffffff;
+    font-weight: 900;
+    font-family: "Roboto";
+}
 h1 {
     font-size: 35px;
     line-height: 35px;
@@ -13,10 +35,10 @@ h2 {
     font-weight: 900;
     font-family: "Roboto";
 }
-.logo {
-    width: 22px;
-    height: 25px;
-    background-color: #dc5e44;
+.logo1 {
+    width: 1280px;
+    height: 420px;
+    border-radius: 30px;
 }
 .card1 {
     width: 400px;
@@ -107,4 +129,10 @@ h3 {
     width: 170px;
     height: 148px;
     background-color: #ffffff;
+}
+
+p span{
+    display: block;
+    line-height: 1.5em;
+    text-align: left;
 }
