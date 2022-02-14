@@ -4,11 +4,18 @@
 
 {% block body %}
 
-
 <div class="container">
+    <div class="row">
+        <p class="carousel-caption">
+            <span>DECOUVREZ L'ESPACE</span>
+            <span>COMME JAMAIS</span>
+            <span>AUPARAVANT</span>
+        </p>
+        <img class="logo1" src="{{ asset( 'build/space-shuttle-g119fb5bb2_1920.jpg') }}" >       
+    </div> 
     
     <div class="container">
-    <h2>Nos articles</h2>
+        <h2>Nos articles</h2>
         <div class="row">
             {% for article in articles %}
             <div class="col-4 p-1">
